@@ -9,7 +9,7 @@ body {
 }
 
 #header-font {
-  font-size: 3em;
+  font-size: 4em;
 }
 
 .no-bullet-points {
@@ -18,11 +18,29 @@ body {
 
 .top-nav {
   text-align: center;
+  padding: 1.5em 0;
 }
 
 .scoreboard {
   display: flex;
   justify-content: space-evenly;
+  padding: 1em 0 7.5em 0;
+}
+
+.team-score-divider {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#team-1-score-output {
+  font-size: 4em;
+}
+
+#team-2-score-output {
+  font-size: 4em;
 }
 
 .update-container {
@@ -36,4 +54,5 @@ body {
 
 .update-team-score {
   display: flex;
+  justify-content: space-evenly;
 }
