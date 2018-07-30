@@ -7,3 +7,33 @@ body {
   min-height: 100%;
   font: 16px / 1 sans-serif;
 }
+
+#header-font {
+  font-size: 3em;
+}
+
+.no-bullet-points {
+  list-style: none;
+}
+
+.top-nav {
+  text-align: center;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.update-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.update-team-name {
+  display: flex;
+}
+
+.update-team-score {
+  display: flex;
+}

@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Y</title>
-    <link rel="stylesheet" href="/screen.css">
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-    <script src="/main.js" charset="utf-8"></script>
-  </body>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scoreboard</title>
+  <link rel="stylesheet" href="/screen.css">
+</head>
+
+<body>
+
+  <nav class="top-nav">
+    <header id="header-font">My Scoreboard</header>
+  </nav>
+  <section class="scoreboard">
+    <section class="scoreboard-team-1">
+      <ul class="team-score-divider no-bullet-points">
+        <li id="team-1-name">Team 1</li>
+        <li id="team-1-score">0</li>
+      </ul>
+    </section>
+    <section class="scoreboard-team-2">
+      <ul class="team-score-divider no-bullet-points">
+        <li id="team-2-name">Team 2</li>
+        <li id="team-2-score">0</li>
+      </ul>
+    </section>
+  </section>
+  <section class="update-container">
+    <section class="update-team-1">
+      <ul class="update-team-name no-bullet-points">
+        <li>Update Team 1 Name</li>
+        <li><input type="text"></li>
+        <li><button>Update</button></li>
+      </ul>
+      <ul class="update-team-score no-bullet-points">
+        <li>Update Team 1 Score</li>
+        <li><button>Add 1</button></li>
+        <li><button>Subtract 1</button></li>
+      </ul>
+    </section>
+    <section class="update-team-2">
+      <ul class="update-team-name no-bullet-points">
+        <li>Update Team 2 Name</li>
+        <li><input type="text"></li>
+        <li><button>Update</button></li>
+      </ul>
+      <ul class="update-team-score no-bullet-points">
+        <li>Update Team 2 Score</li>
+        <li><button>Add 1</button></li>
+        <li><button>Subtract 1</button></li>
+      </ul>
+    </section>
+  </section>
+
+  <script src="/main.js" charset="utf-8"></script>
+</body>
+
 </html>
