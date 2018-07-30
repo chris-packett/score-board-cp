@@ -14,9 +14,16 @@ const updateTeamName = (inputSelector, outputSelector) => {
   document.querySelector(inputSelector).value = '' //clear the input field to be blank for the next input
 }
 
-const modify = (score, modifier) => score + modifier //function that takes in a score and a modifier
 const addOne = (score) => modify(score, 1) //function that adds 1 to the score using the modify function above
 const subOne = (score) => modify(score, -1) //function that subtracts 1 to the score using the modify function above
+const modify = (score, modifier) => {
+  if (modifier === -1 && score === 0) {
+    return score //to block score from being a negative number
+  }
+  else {
+    return score + modifier //function that adds a score and a modifier
+  }
+}
 
 const updateAddTeamOneScore = () => {
   updateTeamScore('#team-1-score-output', addOne)
@@ -27,7 +34,7 @@ const updateAddTeamTwoScore = () => {
 }
 
 const updateSubtractTeamOneScore = () => {
-  updateTeamScore('#team-1-score-output', subOne)
+    updateTeamScore('#team-1-score-output', subOne)
 }
 
 const updateSubtractTeamTwoScore = () => {
@@ -40,6 +47,7 @@ const updateTeamScore = (score, modifier) => {
   document.querySelector(score).textContent = newScore
 }
 
+//Add event listeners for button clicks
 document.querySelector('#team-1-name-button').addEventListener('click', updateTeamOneName)
 document.querySelector('#team-2-name-button').addEventListener('click', updateTeamTwoName)
 document.querySelector('#team-1-add-score-button').addEventListener('click', updateAddTeamOneScore)
