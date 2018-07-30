@@ -1,46 +1,43 @@
-//Updating team one's name based on user input
 const updateTeamOneName = () => {
-  updateTeamName('#team-1-name-input', '#team-1-name-output') //call updateTeamName function and pass through input and output variables
-} 
+  updateTeamName('#team-1-name-input', '#team-1-name-output')
+}
 
-//Updating team two's name based on user input
+
 const updateTeamTwoName = () => {
-  updateTeamName('#team-2-name-input','#team-2-name-output') //call updateTeamName function and pass through input and output variables
-} 
+  updateTeamName('#team-2-name-input', '#team-2-name-output')
+}
 
-//Getting the current team name value and changing it to what the user inputted
+
 const updateTeamName = (inputSelector, outputSelector) => {
   const teamName = document.querySelector(inputSelector).value //assign user input to local variable, teamName
   document.querySelector(outputSelector).textContent = teamName //assign teamName to the output field
   document.querySelector(inputSelector).value = '' //clear the input field to be blank for the next input
 }
 
+const modify = (score, modifier) => score + modifier //function that takes in a score and a modifier
+const addOne = (score) => modify(score, 1) //function that adds 1 to the score using the modify function above
+const subOne = (score) => modify(score, -1) //function that subtracts 1 to the score using the modify function above
+
 const updateAddTeamOneScore = () => {
-  updateAddTeamScore('#team-1-score-output', '#team-1-score-output')
+  updateTeamScore('#team-1-score-output', addOne)
 }
 
 const updateAddTeamTwoScore = () => {
-  updateAddTeamScore('#team-2-score-output', '#team-2-score-output')
+  updateTeamScore('#team-2-score-output', addOne)
 }
 
 const updateSubtractTeamOneScore = () => {
-  updateSubtractTeamScore('#team-1-score-output', '#team-1-score-output')
+  updateTeamScore('#team-1-score-output', subOne)
 }
 
 const updateSubtractTeamTwoScore = () => {
-  updateSubtractTeamScore('#team-2-score-output', '#team-2-score-output')
+  updateTeamScore('#team-2-score-output', subOne)
 }
 
-const updateAddTeamScore = (inputSelector, outputSelector) => {
-  const teamScore = parseInt(document.querySelector(inputSelector).textContent)
-  newScore = teamScore + 1
-  document.querySelector(outputSelector).textContent = newScore
-}
-
-const updateSubtractTeamScore = (inputSelector, outputSelector) => {
-  const teamScore = parseInt(document.querySelector(inputSelector).textContent)
-  newScore = teamScore - 1
-  document.querySelector(outputSelector).textContent = newScore
+const updateTeamScore = (score, modifier) => {
+  const teamScore = parseInt(document.querySelector(score).textContent)
+  newScore = modifier(teamScore)
+  document.querySelector(score).textContent = newScore
 }
 
 document.querySelector('#team-1-name-button').addEventListener('click', updateTeamOneName)
